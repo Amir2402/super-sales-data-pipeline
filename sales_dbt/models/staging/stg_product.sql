@@ -1,0 +1,10 @@
+WITH SOURCE AS (
+    SELECT 
+        PRODUCTID AS PRODUCT_ID, 
+        PRODUCT_NAME, 
+        CATEGORY, 
+        SUBCATEGORY
+    FROM {{source('sales', 'SUPERSTORE')}}
+)
+
+SELECT * FROM SOURCE  

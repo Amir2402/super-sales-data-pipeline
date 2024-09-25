@@ -1,0 +1,60 @@
+models:
+  
+  - name: dim_customer
+    columns: 
+      - name: CUSTOMER_ID
+        tests: 
+          - unique
+          - not_null 
+  
+  - name: dim_location
+    columns: 
+      - name: LOCATION_ID
+        tests: 
+          - unique
+          - not_null 
+  
+  - name: dim_product 
+    columns: 
+      - name: PRODUCT_ID
+        tests: 
+          - unique 
+          - not_null 
+
+  - name: dim_date
+    columns: 
+      - name: ORDER_DATE
+        tests: 
+          - unique 
+          - not_null 
+  
+  - name: fact 
+    columns: 
+    - name: ORDER_DATE
+      tests: 
+        - relationships: 
+            to: ref('dim_date') 
+            field: ORDER_DATE
+    
+    - name: CUSTOMER_ID
+      tests: 
+        - relationships: 
+            to: ref('dim_customer') 
+            field: CUSTOMER_ID 
+    
+    - name: PRODUCT_ID 
+      tests: 
+        - relationships: 
+            to: ref('dim_product')
+            field: PRODUCT_ID 
+  
+    - name: LOCATION_ID 
+      tests: 
+        - relationships: 
+            to: ref('dim_location')
+            field: LOCATION_ID 
+  
+  
+
+
+

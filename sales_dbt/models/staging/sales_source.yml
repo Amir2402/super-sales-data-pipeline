@@ -1,0 +1,7 @@
+sources: 
+  - name: sales
+    database: SALES_DB
+    schema: RAW_DATA 
+    tables: 
+      - name: SUPERSTORE
+    

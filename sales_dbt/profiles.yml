@@ -1,0 +1,13 @@
+sales_dbt:
+  outputs:
+    dev:
+      account: 'account id'
+      database: 'database name'
+      password: 'password'
+      role: 'role'
+      schema: 'schema name'
+      threads: 1
+      type: snowflake
+      user: 'username'
+      warehouse: 'warehouse name'
+  target: dev

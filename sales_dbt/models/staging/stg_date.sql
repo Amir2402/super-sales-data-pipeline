@@ -1,0 +1,10 @@
+WITH SOURCE AS(
+    SELECT 
+        TO_DATE(ORDER_DATE, 'DD/MM/YYYY') AS ORDER_DATE
+    FROM 
+        {{source('sales', 'SUPERSTORE')}}
+)
+
+SELECT * FROM SOURCE
+
+

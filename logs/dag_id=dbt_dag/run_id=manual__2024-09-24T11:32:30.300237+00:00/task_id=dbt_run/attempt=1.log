@@ -1,0 +1,59 @@
+[2024-09-24T11:34:04.047+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-24T11:34:04.080+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_dag.dbt_run manual__2024-09-24T11:32:30.300237+00:00 [queued]>
+[2024-09-24T11:34:04.097+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_dag.dbt_run manual__2024-09-24T11:32:30.300237+00:00 [queued]>
+[2024-09-24T11:34:04.098+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-24T11:34:04.127+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_run> on 2024-09-24 11:32:30.300237+00:00
+[2024-09-24T11:34:04.140+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=783) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-24T11:34:04.142+0000] {standard_task_runner.py:72} INFO - Started process 784 to run task
+[2024-09-24T11:34:04.140+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_dag', 'dbt_run', 'manual__2024-09-24T11:32:30.300237+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/dbt_snowflake_dag.py', '--cfg-path', '/tmp/tmp48sb2ntp']
+[2024-09-24T11:34:04.144+0000] {standard_task_runner.py:105} INFO - Job 39: Subtask dbt_run
+[2024-09-24T11:34:04.166+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-24T11:34:04.223+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_dag.dbt_run manual__2024-09-24T11:32:30.300237+00:00 [running]> on host cb04601716d3
+[2024-09-24T11:34:04.378+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Amir' AIRFLOW_CTX_DAG_ID='dbt_dag' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2024-09-24T11:32:30.300237+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-24T11:32:30.300237+00:00'
+[2024-09-24T11:34:04.379+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-24T11:34:04.412+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-24T11:34:04.413+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/code/sales_dbt && dbt run']
+[2024-09-24T11:34:04.429+0000] {subprocess.py:86} INFO - Output:
+[2024-09-24T11:34:09.438+0000] {subprocess.py:93} INFO - [0m11:34:09  Running with dbt=1.8.6
+[2024-09-24T11:34:11.746+0000] {subprocess.py:93} INFO - [0m11:34:11  Registered adapter: snowflake=1.8.3
+[2024-09-24T11:34:12.691+0000] {subprocess.py:93} INFO - [0m11:34:12  Found 10 models, 1 seed, 1 operation, 12 data tests, 1 source, 656 macros
+[2024-09-24T11:34:12.700+0000] {subprocess.py:93} INFO - [0m11:34:12
+[2024-09-24T11:34:16.966+0000] {subprocess.py:93} INFO - [0m11:34:16  Concurrency: 1 threads (target='dev')
+[2024-09-24T11:34:16.966+0000] {subprocess.py:93} INFO - [0m11:34:16
+[2024-09-24T11:34:16.987+0000] {subprocess.py:93} INFO - [0m11:34:16  1 of 10 START sql view model SALES_SCHEMA.stg_customer ......................... [RUN]
+[2024-09-24T11:34:18.191+0000] {subprocess.py:93} INFO - [0m11:34:18  1 of 10 OK created sql view model SALES_SCHEMA.stg_customer .................... [[32mSUCCESS 1[0m in 1.20s]
+[2024-09-24T11:34:18.195+0000] {subprocess.py:93} INFO - [0m11:34:18  2 of 10 START sql view model SALES_SCHEMA.stg_date ............................. [RUN]
+[2024-09-24T11:34:19.258+0000] {subprocess.py:93} INFO - [0m11:34:19  2 of 10 OK created sql view model SALES_SCHEMA.stg_date ........................ [[32mSUCCESS 1[0m in 1.06s]
+[2024-09-24T11:34:19.262+0000] {subprocess.py:93} INFO - [0m11:34:19  3 of 10 START sql view model SALES_SCHEMA.stg_fact ............................. [RUN]
+[2024-09-24T11:34:20.364+0000] {subprocess.py:93} INFO - [0m11:34:20  3 of 10 OK created sql view model SALES_SCHEMA.stg_fact ........................ [[32mSUCCESS 1[0m in 1.10s]
+[2024-09-24T11:34:20.369+0000] {subprocess.py:93} INFO - [0m11:34:20  4 of 10 START sql view model SALES_SCHEMA.stg_location ......................... [RUN]
+[2024-09-24T11:34:21.423+0000] {subprocess.py:93} INFO - [0m11:34:21  4 of 10 OK created sql view model SALES_SCHEMA.stg_location .................... [[32mSUCCESS 1[0m in 1.05s]
+[2024-09-24T11:34:21.428+0000] {subprocess.py:93} INFO - [0m11:34:21  5 of 10 START sql view model SALES_SCHEMA.stg_product .......................... [RUN]
+[2024-09-24T11:34:22.518+0000] {subprocess.py:93} INFO - [0m11:34:22  5 of 10 OK created sql view model SALES_SCHEMA.stg_product ..................... [[32mSUCCESS 1[0m in 1.09s]
+[2024-09-24T11:34:22.524+0000] {subprocess.py:93} INFO - [0m11:34:22  6 of 10 START sql table model SALES_SCHEMA.dim_customer ........................ [RUN]
+[2024-09-24T11:34:24.466+0000] {subprocess.py:93} INFO - [0m11:34:24  6 of 10 OK created sql table model SALES_SCHEMA.dim_customer ................... [[32mSUCCESS 1[0m in 1.94s]
+[2024-09-24T11:34:24.469+0000] {subprocess.py:93} INFO - [0m11:34:24  7 of 10 START sql table model SALES_SCHEMA.dim_date ............................ [RUN]
+[2024-09-24T11:34:25.997+0000] {subprocess.py:93} INFO - [0m11:34:25  7 of 10 OK created sql table model SALES_SCHEMA.dim_date ....................... [[32mSUCCESS 1[0m in 1.52s]
+[2024-09-24T11:34:26.002+0000] {subprocess.py:93} INFO - [0m11:34:26  8 of 10 START sql table model SALES_SCHEMA.dim_location ........................ [RUN]
+[2024-09-24T11:34:27.484+0000] {subprocess.py:93} INFO - [0m11:34:27  8 of 10 OK created sql table model SALES_SCHEMA.dim_location ................... [[32mSUCCESS 1[0m in 1.48s]
+[2024-09-24T11:34:27.487+0000] {subprocess.py:93} INFO - [0m11:34:27  9 of 10 START sql table model SALES_SCHEMA.dim_product ......................... [RUN]
+[2024-09-24T11:34:29.378+0000] {subprocess.py:93} INFO - [0m11:34:29  9 of 10 OK created sql table model SALES_SCHEMA.dim_product .................... [[32mSUCCESS 1[0m in 1.89s]
+[2024-09-24T11:34:29.382+0000] {subprocess.py:93} INFO - [0m11:34:29  10 of 10 START sql table model SALES_SCHEMA.fact ............................... [RUN]
+[2024-09-24T11:34:31.678+0000] {subprocess.py:93} INFO - [0m11:34:31  10 of 10 OK created sql table model SALES_SCHEMA.fact .......................... [[32mSUCCESS 1[0m in 2.29s]
+[2024-09-24T11:34:31.683+0000] {subprocess.py:93} INFO - [0m11:34:31
+[2024-09-24T11:34:31.685+0000] {subprocess.py:93} INFO - [0m11:34:31  Running 1 on-run-end hook
+[2024-09-24T11:34:31.730+0000] {subprocess.py:93} INFO - [0m11:34:31  1 of 1 START hook: dbt_constraints.on-run-end.0 ................................ [RUN]
+[2024-09-24T11:34:31.732+0000] {subprocess.py:93} INFO - [0m11:34:31  1 of 1 OK hook: dbt_constraints.on-run-end.0 ................................... [[32mOK[0m in 0.00s]
+[2024-09-24T11:34:31.733+0000] {subprocess.py:93} INFO - [0m11:34:31
+[2024-09-24T11:34:31.737+0000] {subprocess.py:93} INFO - [0m11:34:31
+[2024-09-24T11:34:31.739+0000] {subprocess.py:93} INFO - [0m11:34:31  Finished running 5 view models, 5 table models, 1 project hook in 0 hours 0 minutes and 19.04 seconds (19.04s).
+[2024-09-24T11:34:31.967+0000] {subprocess.py:93} INFO - [0m11:34:31
+[2024-09-24T11:34:31.968+0000] {subprocess.py:93} INFO - [0m11:34:31  [32mCompleted successfully[0m
+[2024-09-24T11:34:31.969+0000] {subprocess.py:93} INFO - [0m11:34:31
+[2024-09-24T11:34:31.970+0000] {subprocess.py:93} INFO - [0m11:34:31  Done. PASS=10 WARN=0 ERROR=0 SKIP=0 TOTAL=10
+[2024-09-24T11:34:33.715+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-09-24T11:34:33.761+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-24T11:34:33.762+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_dag, task_id=dbt_run, run_id=manual__2024-09-24T11:32:30.300237+00:00, execution_date=20240924T113230, start_date=20240924T113404, end_date=20240924T113433
+[2024-09-24T11:34:33.821+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-24T11:34:33.855+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-24T11:34:33.857+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

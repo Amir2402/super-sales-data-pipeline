@@ -1,0 +1,20 @@
+WITH SOURCE AS(
+    SELECT 
+        DISTINCT
+            ORDER_DATE
+    FROM
+        {{ ref('stg_date') }}
+), 
+
+DATE_DIM AS(
+    SELECT 
+        ORDER_DATE,
+        YEAR(ORDER_DATE) AS ORDER_YEAR, 
+        MONTH(ORDER_DATE) AS ORDER_MONTH, 
+        DAY(ORDER_DATE) AS ORDER_DAY, 
+        QUARTER(ORDER_DATE) AS ORDER_QUARTER
+    FROM 
+        SOURCE
+)
+
+SELECT * FROM DATE_DIM
